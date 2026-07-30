@@ -1,13 +1,7 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+import Welcome from "./components/welcome.vue";
 </script>
 <template>
-  <div>
-    <Icon
-      icon="fluent:bow-tie-24-regular"
-      width="240px"
-      height="240px"
-      color="#f00"
-    />
-  </div>
+  <Welcome />
 </template>
