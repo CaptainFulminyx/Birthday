@@ -129,3 +129,8 @@ p {
   }
 }
 
+.initicon{
+  @apply flex h-28 w-28 items-center justify-center rounded-full bg-cream transition-transform active:scale-95 disabled:cursor-default;
+
+  border: 8px solid var(--color-pink-deep);
+}
