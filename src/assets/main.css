@@ -1,10 +1,6 @@
- @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import "tailwindcss";
 
-/* ============================================
-   1. DESIGN TOKENS
-   Registered via @theme so Tailwind v4 auto-generates
-   utilities from them (bg-primary, text-pink-deep, etc.)
-   ============================================ */
 @theme {
   /* Color palette */
   --color-pink-soft: #ffe5ec;
@@ -28,9 +24,8 @@
   --color-text-muted: var(--color-ink-400);
   --color-accent: var(--color-pink-deep);
 
-  /* Typography */
-  --font-display: "Poppins", "Segoe UI", sans-serif;
-  --font-body: "Quicksand", "Segoe UI", sans-serif;
+  /* Typography - Concert One everywhere */
+  --font-primary: "Concert One", sans-serif;
 
   /* Radii, shadows, motion — reused instead of re-declared per element */
   --radius-sm: 0.5rem;
@@ -64,7 +59,7 @@ html {
 
 body {
   min-height: 100dvh;
-  font-family: var(--font-body);
+  font-family: var(--font-primary);
   line-height: 1.5;
 }
 
@@ -95,8 +90,8 @@ button {
    of jumping at breakpoints.
    ============================================ */
 h1, h2, h3 {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-primary);
+  font-weight: 400;
   line-height: 1.15;
   color: var(--color-text-primary);
 }
@@ -107,6 +102,7 @@ h3 { font-size: clamp(1.125rem, 2vw + 1rem, 1.5rem); }
 
 p {
   color: var(--color-text-muted);
+  font-family: var(--font-primary);
 }
 
 /* ============================================
@@ -129,8 +125,8 @@ p {
   }
 }
 
-.initicon{
+.initicon {
   @apply flex h-50 w-50 items-center justify-center bg-cream transition-transform active:scale-100 disabled:cursor-default;
-
   overflow: visible;
+  font-family: var(--font-primary);
 }

@@ -1,4 +1,3 @@
-<!-- Welcome.vue -->
 <script setup>
 import { ref } from "vue";
 import { motion, AnimatePresence } from "motion-v";
@@ -35,7 +34,7 @@ function cancelHold() {
   }
   if (!isExiting.value) {
     isHolding.value = false;
-    ringOffset.value = 0; // snap back quickly
+    ringOffset.value = CIRCUMFERENCE; // Fix: reset to full circumference (fully shrunk)
   }
 }
 
@@ -50,7 +49,7 @@ function handleExitComplete() {
     <motion.div
       v-if="!isExiting"
       key="welcome-overlay"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-bg-primary"
+      class="fixed inset-0 z-50 flex flex-col items-center justify-center gap-10 bg-bg-primary"
       :initial="{ opacity: 0, scale: 1.04, filter: 'blur(16px)' }"
       :animate="{ opacity: 1, scale: 1, filter: 'blur(0px)' }"
       :exit="{ opacity: 0, scale: 1.08, filter: 'blur(24px)' }"
@@ -102,7 +101,7 @@ function handleExitComplete() {
             :style="{
               strokeDashoffset: ringOffset,
               transitionProperty: 'stroke-dashoffset',
-              transitionDuration: isHolding ? `${HOLD_DURATION}ms` : '200ms',
+              transitionDuration: isHolding ? `${HOLD_DURATION}ms` : '500ms',
               transitionTimingFunction: isHolding ? 'linear' : 'ease-out',
             }"
           />
@@ -110,6 +109,7 @@ function handleExitComplete() {
 
         <Icon class="h-24 w-24 text-pink-deep" icon="line-md:heart-filled" />
       </motion.button>
+      <h2>Hold the Heart <3</h2>
     </motion.div>
   </AnimatePresence>
 </template>
