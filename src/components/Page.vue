@@ -1,10 +1,19 @@
 <template>
-  <div
-    class="flex min-h-dvh flex-col items-center justify-center px-6 text-center"
-  >
-    <h1 class="text-[40px] font-bold tracking-tight">Hello My Dear!</h1>
-    <p class="mt-4 max-w-md text-lg">
-      The bow-tie has revealed your birthday page.
+  <div class="h1">
+    <p>
+      Hellooo, <br />
+      Birthday Girll!!!
     </p>
+  </div>
+  <div class="p1">
+    Hey you little sweety pie, guess who's the queen today? It's My gorgeous
+    baby girll<3
+  </div>
+  <div class="b1">
+    <svg></svg>
+    <img />
+    <img />
+    <imh />
+    <svg></svg>
   </div>
 </template>
