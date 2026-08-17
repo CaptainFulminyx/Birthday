@@ -2,9 +2,9 @@
 import { ref } from "vue";
 import { motion } from "motion-v";
 import Welcome from "./components/Welcome.vue";
-import Page from "./components/Page.vue";
+import Page from "./components/Page1.vue";
 
-const showWelcome = ref(true); // FOR DEVELOPMENT ONLY!!!!!!!!!!;
+const showWelcome = ref(false); // FOR DEVELOPMENT ONLY!!!!!!!!!!;
 </script>
 
 <template>
