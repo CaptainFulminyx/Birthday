@@ -4,7 +4,7 @@ import { motion } from "motion-v";
 import Welcome from "./components/Welcome.vue";
 import Page from "./components/Page.vue";
 
-const showWelcome = ref(false) // FOR DEVELOPMENT ONLY!!!!!!!!!!;
+const showWelcome = ref(true); // FOR DEVELOPMENT ONLY!!!!!!!!!!;
 </script>
 
 <template>
