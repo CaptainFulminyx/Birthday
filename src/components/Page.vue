@@ -67,6 +67,7 @@ const icons = Array.from({ length: 4 }, (_, i) => ({
         }"
       />
     </div>
+    <img src="../assets/ghostwithcake.jpg" style="border-radius: 20px" />
   </div>
 </template>
 
