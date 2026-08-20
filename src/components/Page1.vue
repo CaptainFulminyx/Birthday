@@ -76,6 +76,9 @@ const icons = Array.from({ length: 4 }, (_, i) => ({
         height: 350px;
       "
     >
+      <h3 style="position: absolute; right: 20px; margin-right: 20px">
+        Swipe >>>
+      </h3>
       <img src="../assets/ghostwithcake.jpg" style="width: 100%" />
     </div>
     <h1

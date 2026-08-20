@@ -2,7 +2,8 @@
 import { ref } from "vue";
 import { motion } from "motion-v";
 import Welcome from "./components/Welcome.vue";
-import Page from "./components/Page1.vue";
+import Page1 from "./components/Page1.vue";
+import Page2 from "./components/Page2.vue";
 
 const showWelcome = ref(false); // FOR DEVELOPMENT ONLY!!!!!!!!!!;
 </script>
@@ -21,7 +22,8 @@ const showWelcome = ref(false); // FOR DEVELOPMENT ONLY!!!!!!!!!!;
         delay: 0.15,
       }"
     >
-      <Page />
+      <Page1 v-if="false" />
+      <Page2 />
     </motion.div>
   </div>
 </template>
