@@ -67,10 +67,17 @@ const icons = Array.from({ length: 4 }, (_, i) => ({
         }"
       />
     </div>
-    <img
-      src="../assets/ghostwithcake.jpg"
-      style="border-radius: 20px; border: 5px solid #fb5092"
-    />
+    <div
+      style="
+        border-radius: 20px;
+        border: 5px solid #fb5092;
+        overflow: hidden;
+        width: 350px;
+        height: 350px;
+      "
+    >
+      <img src="../assets/ghostwithcake.jpg" style="width: 100%" />
+    </div>
     <h1
       class="heading"
       style="
@@ -93,6 +100,9 @@ const icons = Array.from({ length: 4 }, (_, i) => ({
   max-height: 100vh;
   margin: 0 auto;
   padding: 2.5rem 2rem 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .heading {
