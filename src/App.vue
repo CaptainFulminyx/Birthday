@@ -9,10 +9,7 @@ const showWelcome = ref(false); // FOR DEVELOPMENT ONLY!!!!!!!!!!;
 
 <template>
   <div class="relative min-h-dvh overflow-hidden bg-bg-primary">
-    <!-- Welcome handles its own exit animation, then emits 'done' -->
     <Welcome v-if="showWelcome" @done="showWelcome = false" />
-
-    <!-- Page enters with a smooth upward fade only after Welcome is gone -->
     <motion.div
       v-else
       class="relative z-10"

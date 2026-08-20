@@ -67,13 +67,30 @@ const icons = Array.from({ length: 4 }, (_, i) => ({
         }"
       />
     </div>
-    <img src="../assets/ghostwithcake.jpg" style="border-radius: 20px" />
+    <img
+      src="../assets/ghostwithcake.jpg"
+      style="border-radius: 20px; border: 5px solid #fb5092"
+    />
+    <h1
+      class="heading"
+      style="
+        font-size: 4.2rem;
+        text-align: center;
+        margin-left: -50px;
+        margin-top: -50px;
+        line-height: 0.95;
+      "
+    >
+      Happy <br />
+      Birthday
+    </h1>
   </div>
 </template>
 
 <style scoped>
 .page {
   max-width: 100vw;
+  max-height: 100vh;
   margin: 0 auto;
   padding: 2.5rem 2rem 3rem 2rem;
 }
