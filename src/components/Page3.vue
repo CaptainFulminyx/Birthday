@@ -43,6 +43,7 @@
   border-radius: 20px;
   overflow: hidden;
   align-self: flex-end;
-  padding: 10px;
+  padding: 15px;
+  overflow-y: scroll;
 }
 </style>
