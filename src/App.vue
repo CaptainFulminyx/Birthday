@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { motion } from "motion-v";
 import Welcome from "./components/Welcome.vue";
 import Page1 from "./components/Page1.vue";
-import Page2 from "./components/Page2.vue";
+import Page3 from "./components/Page3.vue";
 
 const showWelcome = ref(false); // FOR DEVELOPMENT ONLY!!!!!!!!!!;
 </script>
@@ -23,7 +23,7 @@ const showWelcome = ref(false); // FOR DEVELOPMENT ONLY!!!!!!!!!!;
       }"
     >
       <Page1 v-if="false" />
-      <Page2 />
+      <Page3 />
     </motion.div>
   </div>
 </template>
