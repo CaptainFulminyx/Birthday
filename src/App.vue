@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { motion } from "motion-v";
 import Welcome from "./components/Welcome.vue";
 import Page1 from "./components/Page1.vue";
-import Page3 from "./components/Page3.vue";
+import Page3 from "./components/Page4.vue";
 
 const showWelcome = ref(false); // FOR DEVELOPMENT ONLY!!!!!!!!!!;
 </script>
