@@ -22,17 +22,12 @@
           v-for="day in calendarDays"
           :key="day.date"
           class="day-cell"
-          :class="{
-            'other-month': !day.isCurrentMonth,
-            highlighted: day.isHighlighted,
-            weekend: day.isWeekend,
-          }"
+          :class="{ highlighted: day.isHighlighted }"
+          :style="day.day === 1 ? { gridColumnStart: firstDayColumn } : {}"
         >
           <span class="day-number">{{ day.day }}</span>
         </div>
       </div>
-
-      <!-- Highlight Legend -->
     </div>
   </div>
 </template>
@@ -40,69 +35,27 @@
 <script setup>
 import { computed } from "vue";
 
-// Constants
 const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const HIGHLIGHT_DAY = 31;
-const HIGHLIGHT_MONTH = 7; // August (0-indexed)
-const MONTH = 7; // August
+const MONTH = 7; // August (0-indexed)
 const YEAR = 2026;
-const TOTAL_CELLS = 42;
 
-// Computed
+// Offset for day 1 so it aligns under the correct weekday (Mon=1, Tue=2, ...)
+const firstDayColumn = computed(() => {
+  const firstDay = new Date(YEAR, MONTH, 1).getDay();
+  return firstDay === 0 ? 7 : firstDay;
+});
+
 const calendarDays = computed(() => {
-  const firstDayOfMonth = new Date(YEAR, MONTH, 1);
-  const lastDayOfMonth = new Date(YEAR, MONTH + 1, 0);
-
-  // Get first day of month (0=Sun, 1=Mon, ...)
-  let firstDayIndex = firstDayOfMonth.getDay();
-  firstDayIndex = firstDayIndex === 0 ? 6 : firstDayIndex - 1;
-
-  const daysInMonth = lastDayOfMonth.getDate();
-  const daysInPrevMonth = new Date(YEAR, MONTH, 0).getDate();
-
+  const daysInMonth = new Date(YEAR, MONTH + 1, 0).getDate();
   const days = [];
 
-  // Helper to check if date is weekend
-  const isWeekend = (date) => {
-    const dayOfWeek = date.getDay();
-    return dayOfWeek === 0 || dayOfWeek === 6;
-  };
-
-  // Previous month days
-  for (let i = firstDayIndex - 1; i >= 0; i--) {
-    const day = daysInPrevMonth - i;
-    const date = new Date(YEAR, MONTH - 1, day);
-    days.push({
-      day,
-      date: date.toISOString(),
-      isCurrentMonth: false,
-      isHighlighted: false,
-      isWeekend: isWeekend(date),
-    });
-  }
-
-  // Current month days
   for (let i = 1; i <= daysInMonth; i++) {
     const date = new Date(YEAR, MONTH, i);
     days.push({
       day: i,
       date: date.toISOString(),
-      isCurrentMonth: true,
       isHighlighted: i === HIGHLIGHT_DAY,
-      isWeekend: isWeekend(date),
-    });
-  }
-
-  // Next month days
-  const remaining = TOTAL_CELLS - days.length;
-  for (let i = 1; i <= remaining; i++) {
-    const date = new Date(YEAR, MONTH + 1, i);
-    days.push({
-      day: i,
-      date: date.toISOString(),
-      isCurrentMonth: false,
-      isHighlighted: false,
-      isWeekend: isWeekend(date),
     });
   }
 
@@ -152,7 +105,6 @@ const calendarDays = computed(() => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: none;
 }
 
 /* Weekdays */
@@ -205,27 +157,6 @@ const calendarDays = computed(() => {
   height: 100%;
 }
 
-/* Other month days */
-.other-month {
-  border-color: #fce4ec;
-  background: #fafafa;
-}
-
-.other-month .day-number {
-  color: #bdbdbd;
-  font-weight: 400;
-}
-
-/* Weekend days */
-.weekend:not(.other-month) {
-  border-color: #ec407a;
-  background: #fff5f7;
-}
-
-.weekend .day-number {
-  color: #d81b60;
-}
-
 /* Highlighted - August 31 */
 .highlighted {
   border: 3px solid #d81b60 !important;
@@ -240,52 +171,6 @@ const calendarDays = computed(() => {
   font-size: 20px;
   font-weight: 900;
   color: #d81b60;
-  position: relative;
-}
-
-.highlighted .day-number::after {
-  content: "★";
-  position: absolute;
-  top: -8px;
-  right: -12px;
-  font-size: 12px;
-  color: #d81b60;
-}
-
-/* Legend */
-.legend {
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 3px solid #f8bbd0;
-  display: flex;
-  justify-content: center;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #424242;
-}
-
-.legend-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 6px;
-  border: 2px solid #d81b60;
-  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-  flex-shrink: 0;
-}
-
-.highlight-text {
-  color: #d81b60;
-  font-weight: 800;
-  background: #fce4ec;
-  padding: 2px 10px;
-  border-radius: 12px;
-  border: 2px solid #d81b60;
 }
 
 /* Responsive */
@@ -320,28 +205,6 @@ const calendarDays = computed(() => {
   .highlighted .day-number {
     font-size: 17px;
   }
-
-  .highlighted .day-number::after {
-    font-size: 10px;
-    top: -6px;
-    right: -10px;
-  }
-
-  .legend-item {
-    font-size: 13px;
-    gap: 8px;
-  }
-
-  .legend-dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 4px;
-  }
-
-  .highlight-text {
-    padding: 1px 8px;
-    font-size: 12px;
-  }
 }
 
 @media (max-width: 380px) {
@@ -367,12 +230,6 @@ const calendarDays = computed(() => {
 
   .highlighted .day-number {
     font-size: 14px;
-  }
-
-  .highlighted .day-number::after {
-    font-size: 8px;
-    top: -4px;
-    right: -8px;
   }
 }
 </style>
