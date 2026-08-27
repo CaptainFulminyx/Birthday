@@ -77,13 +77,13 @@
           />
 
           <!-- Bottom Layer -->
-          <path
+          <!--  <path
             d="M 50 230 Q 150 245 250 230 L 250 290 Q 150 305 50 290 Z"
             fill="url(#cakeBaseGrad)"
             stroke="#2C2C2C"
             stroke-width="3"
             stroke-linejoin="round"
-          />
+          />-->
 
           <!-- Mid Cream Layer Fill -->
           <path
