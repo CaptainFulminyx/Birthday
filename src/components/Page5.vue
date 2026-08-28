@@ -3,7 +3,7 @@
     <div class="cake-card">
       <div class="cake-wrapper">
         <svg
-          viewBox="0 0 300 360"
+          viewBox="0 0 235.9 297.44"
           class="cake-svg"
           aria-label="Interactive Birthday Cake"
         >
@@ -13,231 +13,198 @@
               <stop offset="0%" stop-color="#FF9D00" stop-opacity="0.4" />
               <stop offset="100%" stop-color="#FF9D00" stop-opacity="0" />
             </radialGradient>
-
-            <!-- Cake Base Gradient -->
-            <linearGradient id="cakeBaseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#F2D7B6" />
-              <stop offset="50%" stop-color="#E8C591" />
-              <stop offset="100%" stop-color="#DDA96C" />
-            </linearGradient>
-
-            <!-- Frosting Gradient -->
-            <linearGradient id="frostingGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#FFF0F5" />
-              <stop offset="100%" stop-color="#F5C2D0" />
-            </linearGradient>
-
-            <!-- Candle Stripe Pattern -->
-            <pattern
-              id="candleStripe"
-              width="8"
-              height="8"
-              patternTransform="rotate(45 0 0)"
-              patternUnits="userSpaceOnUse"
-            >
-              <line
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="8"
-                stroke="#E65100"
-                stroke-width="4"
-              />
-              <line
-                x1="4"
-                y1="0"
-                x2="4"
-                y2="8"
-                stroke="#FFF"
-                stroke-width="4"
-              />
-            </pattern>
           </defs>
 
           <!-- Ambient Glow Layer -->
           <circle
             v-if="candleLit && !extinguishing"
-            cx="150"
-            cy="70"
-            r="80"
+            cx="139.1"
+            cy="60"
+            r="50"
             fill="url(#flameGlow)"
             class="ambient-glow"
           />
 
-          <!-- Cake Plate -->
-          <ellipse cx="150" cy="305" rx="115" ry="14" fill="#E2E8F0" />
+          <!-- 
+            YOUR ORIGINAL SVG PATHS
+            All paths preserved exactly as provided
+          -->
+          <path
+            d="M63.87 231.68 L63.87 259.25 C69.91 278.95 206.65 279.52 213.82 262.32 L213.82 231.97"
+            fill-rule="evenodd"
+            style="
+              fill: #d4c871;
+              stroke: #000000;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 4.04;
+            "
+          />
+
+          <!-- Cake Top Layer (Frosting) -->
+          <path
+            d="M64.16 173.3 L63.87 231.68 C119.81 236.06 161.49 240.93 213.82 231.97 L214.05 177.13"
+            style="
+              fill: #faedcd;
+              stroke: #000000;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 4.04;
+            "
+          />
+
+          <!-- Decorative Sprinkles/Stars -->
+          <path
+            d="M50.17 78.42 L79.71 86.18 L76.38 58.08 L90.95 31.57 L61.34 28.03 L44.52 2.02 L31.17 29.39 L2.02 39.13 L21.05 59.44 L21.05 89.77 L50.17 78.42"
+            style="
+              fill: #88ff5f;
+              stroke: #000000;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 4.04;
+            "
+          />
+
+          <!-- Decorative Eyes -->
           <ellipse
-            cx="150"
-            cy="302"
-            rx="110"
-            ry="12"
-            fill="#FFFFFF"
-            stroke="#CBD5E1"
-            stroke-width="2"
+            transform="matrix(0.0436793455772179, 0, 0, 0.0436793455772179, 120.660779781565, 205.15169228311)"
+            cx="0"
+            cy="0"
+            rx="100"
+            ry="100"
+            style="fill: #000000"
+          />
+          <ellipse
+            transform="matrix(0.0436793455772179, 0, 0, 0.0436793455772179, 160.360800988913, 205.15169228311)"
+            cx="0"
+            cy="0"
+            rx="100"
+            ry="100"
+            style="fill: #000000"
           />
 
-          <!-- Bottom Layer -->
-          <!--  <path
-            d="M 50 230 Q 150 245 250 230 L 250 290 Q 150 305 50 290 Z"
-            fill="url(#cakeBaseGrad)"
-            stroke="#2C2C2C"
-            stroke-width="3"
-            stroke-linejoin="round"
-          />-->
-
-          <!-- Mid Cream Layer Fill -->
+          <!-- Smile -->
           <path
-            d="M 50 260 Q 150 273 250 260"
-            stroke="#FFF"
-            stroke-width="6"
-            fill="none"
-            opacity="0.9"
+            d="M129.31 216.27 Q140.82 228.55 152.28 216.36"
+            style="
+              fill: none;
+              stroke: #000000;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 4.04;
+            "
           />
 
-          <!-- Top Layer Cake Base -->
-          <path
-            d="M 70 170 Q 150 182 230 170 L 230 235 Q 150 248 70 235 Z"
-            fill="url(#cakeBaseGrad)"
-            stroke="#2C2C2C"
-            stroke-width="3"
-            stroke-linejoin="round"
-          />
-
-          <!-- Frosting Top Drips -->
-          <path
-            d="M 68 170 
-               Q 68 150 150 150 
-               Q 232 150 232 170 
-               Q 220 195 210 175 
-               Q 195 200 180 175 
-               Q 165 205 150 175 
-               Q 135 200 120 175 
-               Q 105 195 90 175 
-               Q 78 190 68 170 Z"
-            fill="url(#frostingGrad)"
-            stroke="#2C2C2C"
-            stroke-width="3"
-            stroke-linejoin="round"
-          />
-
-          <!-- Decorative Sprinkles -->
-          <g class="sprinkles">
-            <rect
-              x="95"
-              y="162"
-              width="6"
-              height="3"
-              rx="1.5"
-              fill="#FF6B6B"
-              transform="rotate(15 95 162)"
-            />
-            <rect
-              x="125"
-              y="165"
-              width="6"
-              height="3"
-              rx="1.5"
-              fill="#4ECDC4"
-              transform="rotate(-30 125 165)"
-            />
-            <rect
-              x="175"
-              y="163"
-              width="6"
-              height="3"
-              rx="1.5"
-              fill="#FFE66D"
-              transform="rotate(45 175 163)"
-            />
-            <rect
-              x="205"
-              y="165"
-              width="6"
-              height="3"
-              rx="1.5"
-              fill="#FF6B6B"
-              transform="rotate(-15 205 165)"
+          <!-- 🔥 FLAME (Our animation target) -->
+          <g v-if="candleLit || extinguishing">
+            <path
+              id="flame"
+              d="M139.1 82.86 
+     C132 78, 125 70, 139.1 55
+     C153 70, 146 78, 139.1 82.86 Z"
+              style="
+                fill: #ff0;
+                stroke: #000;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 4.04;
+              "
+              class="flame-path"
+              :class="{ 'flame-extinguishing': extinguishing }"
             />
           </g>
 
-          <!-- Candle Body -->
-          <rect
-            x="143"
-            y="90"
-            width="14"
-            height="62"
-            rx="3"
-            fill="url(#candleStripe)"
-            stroke="#2C2C2C"
-            stroke-width="2.5"
-          />
-
-          <!-- Candle Wick -->
-          <path
-            d="M 150 90 Q 148 83 150 77"
-            fill="none"
-            stroke="#2C2C2C"
-            stroke-width="2.5"
-            stroke-linecap="round"
-          />
-
-          <!-- Flame Assembly -->
-          <g v-if="candleLit" class="flame-group" :class="{ extinguishing }">
-            <!-- Flame Outer -->
-            <path
-              d="M 150 77 C 137 60 142 35 150 20 C 158 35 163 60 150 77 Z"
-              fill="#FF9800"
-              stroke="#E65100"
-              stroke-width="1.5"
-            />
-            <!-- Flame Middle -->
-            <path
-              d="M 150 75 C 142 62 145 42 150 30 C 155 42 158 62 150 75 Z"
-              fill="#FFEB3B"
-            />
-            <!-- Flame Core -->
-            <path
-              d="M 150 73 C 146 65 147 50 150 42 C 153 50 154 65 150 73 Z"
-              fill="#FFFFFF"
-            />
-          </g>
-
-          <!-- Smoke Particles (Appears when extinguished) -->
-          <g v-if="!candleLit" class="smoke-group">
+          <!-- 💨 SMOKE PARTICLES (Appears when extinguished) -->
+          <g v-if="showSmoke" class="smoke-group">
+            <!-- Smoke Path 1 -->
             <path
               class="smoke-particle p1"
-              d="M 150 75 Q 145 55 152 35 T 148 15"
+              d="M139.1 82.86 Q135 70 138 55 T136 40"
               fill="none"
-              stroke="#A0AEC0"
-              stroke-width="2"
+              stroke="#D3D3D3"
+              stroke-width="3"
               stroke-linecap="round"
             />
+            <!-- Smoke Path 2 -->
             <path
               class="smoke-particle p2"
-              d="M 150 75 Q 155 60 147 40 T 153 20"
+              d="M139.1 82.86 Q143 72 140 57 T142 42"
               fill="none"
-              stroke="#CBD5E1"
-              stroke-width="1.5"
+              stroke="#E8E8E8"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+            <!-- Smoke Path 3 -->
+            <path
+              class="smoke-particle p3"
+              d="M139.1 82.86 Q137 68 141 53 T139 38"
+              fill="none"
+              stroke="#BEBEBE"
+              stroke-width="2"
               stroke-linecap="round"
             />
           </g>
 
-          <!-- Cute Face Details -->
-          <g class="cake-face">
-            <circle cx="130" cy="205" r="3.5" fill="#2C2C2C" />
-            <circle cx="170" cy="205" r="3.5" fill="#2C2C2C" />
-            <!-- Cheeks -->
-            <circle cx="122" cy="210" r="4.5" fill="#FF8A8A" opacity="0.5" />
-            <circle cx="178" cy="210" r="4.5" fill="#FF8A8A" opacity="0.5" />
-            <!-- Smile -->
-            <path
-              d="M 143 212 Q 150 217 157 212"
-              fill="none"
-              stroke="#2C2C2C"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </g>
+          <!-- Candle Body (Your existing candle path) -->
+          <path
+            id="candle-body"
+            d="M128.11 142.66 L128.82 103.02 C132.88 98.31 145.46 97.91 149.83 103.02 L150.01 144.19 M139.1 82.86 L139.1 99"
+            style="
+              fill: #ffafcc;
+              stroke: #000000;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 4.04;
+            "
+          />
+
+          <!-- Decorative Elements -->
+          <path
+            d="M213.76 185.71 C221.14 174.7 220.61 163.95 214.05 154.95 C178.08 139.43 99.11 139.15 64.16 151.04 C51.94 163.66 55.77 180.84 61.79 183.54 C67.07 186.94 76.06 185.6 83.15 179.05 C96.91 190.99 109.55 191.62 120.66 177.99 C136.29 192.02 149.63 191.39 160.36 176.76 C172.37 190.16 186.3 189.82 195.18 177.13 C197.47 182.29 203.56 186.96 213.76 185.71"
+            style="
+              fill: #9b9a9c;
+              stroke: #000000;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 4.04;
+            "
+          />
+
+          <path
+            d="M50.42 79.89 C49.48 106.64 41.25 125.33 32.41 154.55 C23.8 201.31 50.17 201.31 32.41 240.05"
+            fill-rule="evenodd"
+            style="
+              fill: none;
+              stroke: #000000;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 4.04;
+            "
+          />
+
+          <path
+            d="M38.19 209.69 C47.01 219.18 55.13 226.65 63.9 225.65 M215.46 225.7 C229.69 229.98 235.25 239.85 233.59 254.37"
+            fill-rule="evenodd"
+            style="
+              fill: none;
+              stroke: #000000;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 4.04;
+            "
+          />
+
+          <path
+            d="M113.84 273.83 L113.84 294.91 M159.63 275.67 L159.63 295.42"
+            fill-rule="evenodd"
+            style="
+              fill: none;
+              stroke: #000000;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 4.04;
+            "
+          />
         </svg>
       </div>
 
@@ -261,7 +228,7 @@
         <!-- Action Buttons -->
         <button
           class="action-btn blow-btn"
-          @click="blowOutCandle"
+          @click="handleBlowOut"
           v-if="candleLit && !isAnimating"
         >
           <span>🌬️</span> Blow Out!
@@ -280,24 +247,117 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted, nextTick } from "vue";
 
 const TOTAL_TIME = 5;
 const candleLit = ref(true);
 const isAnimating = ref(false);
 const extinguishing = ref(false);
+const showSmoke = ref(false);
 const showCountdown = ref(true);
 const timeLeft = ref(TOTAL_TIME);
 
 let countdownInterval = null;
+let smokeAnimationTimer = null;
 
-// Circumference of SVG circle with r=16 (2 * PI * 16 ≈ 100.53)
 const CIRCUMFERENCE = 100.53;
 
 const progressOffset = computed(() => {
   const progress = timeLeft.value / TOTAL_TIME;
   return CIRCUMFERENCE * (1 - progress);
 });
+
+const blowOutCandle = () => {
+  if (!candleLit.value || extinguishing.value) return;
+
+  isAnimating.value = true;
+  extinguishing.value = true;
+  clearInterval(countdownInterval);
+
+  // Wait for the flame to render with the extinguishing class
+  nextTick(() => {
+    const flame = document.querySelector(".flame-path");
+    if (flame) {
+      // Set initial transform origin
+      flame.style.transformOrigin = "10px 25px";
+      flame.style.transformBox = "fill-box";
+
+      // Apply the extinguishing animation
+      flame.classList.add("flame-extinguishing");
+    }
+  });
+
+  // After flame animation completes, show smoke
+  setTimeout(() => {
+    candleLit.value = false;
+    extinguishing.value = false;
+    showSmoke.value = true;
+    showCountdown.value = false;
+    isAnimating.value = false;
+
+    // Trigger smoke animation
+    nextTick(() => {
+      animateSmoke();
+    });
+  }, 600);
+};
+
+const animateSmoke = () => {
+  const particles = document.querySelectorAll(".smoke-particle");
+
+  particles.forEach((particle, index) => {
+    // Reset position
+    particle.style.opacity = "0";
+    particle.style.transform = "none";
+    particle.style.transition = "none";
+
+    // Force reflow
+    void particle.offsetHeight;
+
+    // Animate with staggered delays
+    const delay = index * 200;
+
+    setTimeout(() => {
+      // Set initial state
+      particle.style.transition = `opacity ${0.5 + index * 0.2}s ease-in, transform ${2 + index * 0.5}s ease-out`;
+      particle.style.opacity = "0.7";
+
+      // Apply vertical rise animation using CSS transform
+      particle.style.transform = `translateY(-${30 + index * 15}px)`;
+      particle.style.transformOrigin = "139.1px 82.86px";
+      particle.style.transformBox = "fill-box";
+
+      // Fade out after rising
+      setTimeout(
+        () => {
+          particle.style.transition = `opacity ${0.5 + index * 0.3}s ease-out`;
+          particle.style.opacity = "0";
+        },
+        1500 + index * 300,
+      );
+    }, delay);
+  });
+};
+
+const handleBlowOut = () => {
+  if (candleLit.value && !extinguishing.value) {
+    blowOutCandle();
+  }
+};
+
+const resetCandle = () => {
+  // Reset smoke particles
+  const particles = document.querySelectorAll(".smoke-particle");
+  particles.forEach((p) => {
+    p.style.opacity = "0";
+    p.style.transform = "none";
+    p.style.transition = "none";
+  });
+
+  showSmoke.value = false;
+  candleLit.value = true;
+  startCountdown();
+};
 
 const startCountdown = () => {
   clearInterval(countdownInterval);
@@ -312,174 +372,131 @@ const startCountdown = () => {
     if (timeLeft.value <= 0) {
       timeLeft.value = 0;
       clearInterval(countdownInterval);
-      blowOutCandle();
+      handleBlowOut();
     }
   }, 50);
-};
-
-const blowOutCandle = () => {
-  if (!candleLit.value || extinguishing.value) return;
-
-  isAnimating.value = true;
-  extinguishing.value = true;
-  clearInterval(countdownInterval);
-
-  setTimeout(() => {
-    candleLit.value = false;
-    extinguishing.value = false;
-    showCountdown.value = false;
-    isAnimating.value = false;
-  }, 500);
-};
-
-const resetCandle = () => {
-  candleLit.value = true;
-  startCountdown();
 };
 
 onMounted(() => {
   startCountdown();
 });
 
+// Clean up
 onUnmounted(() => {
   clearInterval(countdownInterval);
+  clearTimeout(smokeAnimationTimer);
 });
 </script>
 
 <style scoped>
-/* Page Layout */
 .cake-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-  padding: 1.5rem;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+  background: #f0f0f0;
 }
 
-/* Glassmorphism Card Wrapper */
 .cake-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 28px;
-  padding: 2.5rem 2rem 2rem;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 380px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .cake-wrapper {
-  width: 100%;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .cake-svg {
   width: 100%;
-  height: 100%;
-  overflow: visible;
+  height: auto;
 }
 
-/* Animations */
-.ambient-glow {
-  animation: pulse-glow 2s ease-in-out infinite alternate;
+/* Flame animation */
+.flame-path {
+  transition: all 0.3s ease-out;
+  transform-origin: 139.1px 82.86px;
+  transform-box: fill-box;
 }
 
-@keyframes pulse-glow {
+.flame-extinguishing {
+  animation: flameOut 0.6s ease-in forwards;
+}
+
+@keyframes flameOut {
   0% {
-    opacity: 0.4;
-    transform: scale(0.98);
-    transform-origin: 150px 70px;
+    transform: scale(1, 1);
+    opacity: 1;
   }
-  100% {
-    opacity: 0.8;
-    transform: scale(1.05);
-    transform-origin: 150px 70px;
+  30% {
+    transform: scale(1.1, 0.85) rotate(-8deg);
+    opacity: 0.9;
   }
-}
-
-.flame-group {
-  animation: flame-flicker 0.1s infinite alternate
-    cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  transform-origin: 150px 77px;
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-}
-
-.flame-group.extinguishing {
-  opacity: 0;
-  transform: scale(0.1) translateY(-20px);
-}
-
-@keyframes flame-flicker {
-  0% {
-    transform: rotate(-1.5deg) scaleX(0.96) translateY(0);
-  }
-  100% {
-    transform: rotate(1.5deg) scaleX(1.04) translateY(-1px);
-  }
-}
-
-/* Smoke Effect */
-.smoke-particle {
-  stroke-dasharray: 40;
-  stroke-dashoffset: 40;
-  animation: rise-smoke 2s ease-out forwards;
-}
-
-.smoke-particle.p2 {
-  animation-delay: 0.2s;
-}
-
-@keyframes rise-smoke {
-  0% {
-    stroke-dashoffset: 40;
-    opacity: 0.8;
-  }
-  50% {
+  60% {
+    transform: scale(0.5, 0.3) rotate(4deg) translateY(2px);
     opacity: 0.5;
   }
   100% {
-    stroke-dashoffset: 0;
+    transform: scale(0.1, 0.05) rotate(4deg) translateY(6px);
     opacity: 0;
-    transform: translateY(-20px);
   }
 }
 
-/* Controls & Interactive Elements */
+/* Smoke animations */
+.smoke-particle {
+  transition: all 0.3s ease;
+  transform-origin: 139.1px 82.86px;
+  transform-box: fill-box;
+  opacity: 0;
+}
+
+.smoke-particle.p1 {
+  animation: smokeRise 2.5s ease-out infinite;
+  animation-delay: 0s;
+}
+
+.smoke-particle.p2 {
+  animation: smokeRise 3s ease-out infinite;
+  animation-delay: 0.3s;
+}
+
+.smoke-particle.p3 {
+  animation: smokeRise 3.5s ease-out infinite;
+  animation-delay: 0.6s;
+}
+
+@keyframes smokeRise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-40px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Controls */
 .controls-area {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
-  width: 100%;
-  margin-top: 0.5rem;
-  min-height: 110px;
-  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-/* Circular Countdown Timer */
 .countdown-wrapper {
   position: relative;
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 50px;
+  height: 50px;
 }
 
 .countdown-svg {
@@ -490,81 +507,69 @@ onUnmounted(() => {
 
 .countdown-bg {
   fill: none;
-  stroke: #edf2f7;
-  stroke-width: 3.5;
+  stroke: #e0e0e0;
+  stroke-width: 3;
 }
 
 .countdown-progress {
   fill: none;
-  stroke: #f5c2d0;
-  stroke-width: 3.5;
+  stroke: #4caf50;
+  stroke-width: 3;
   stroke-linecap: round;
-  stroke-dasharray: 100.53;
-  transition: stroke-dashoffset 0.05s linear;
+  transition: stroke-dashoffset 0.1s linear;
 }
 
 .count {
   position: absolute;
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #4a5568;
-  font-variant-numeric: tabular-nums;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
 }
 
-/* Micro-Interactive Buttons */
 .action-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  width: 100%;
-  padding: 0.875rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 99px;
+  padding: 10px 20px;
   border: none;
+  border-radius: 25px;
+  font-size: 16px;
   cursor: pointer;
-  outline: none;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .blow-btn {
-  background: #2c2c2c;
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(44, 44, 44, 0.15);
+  background: #ff6b6b;
+  color: white;
 }
 
 .blow-btn:hover {
-  background: #404040;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(44, 44, 44, 0.25);
-}
-
-.blow-btn:active {
-  transform: translateY(0);
+  background: #ff5252;
+  transform: scale(1.05);
 }
 
 .reset-btn {
-  background: #f5c2d0;
-  color: #2c2c2c;
-  box-shadow: 0 4px 12px rgba(245, 194, 208, 0.3);
+  background: #4caf50;
+  color: white;
 }
 
 .reset-btn:hover {
-  background: #f0b0c2;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245, 194, 208, 0.45);
+  background: #45a049;
+  transform: scale(1.05);
 }
 
-.reset-btn:active {
-  transform: translateY(0);
+.ambient-glow {
+  animation: pulse 2s ease-in-out infinite;
 }
 
-/* Responsive adjustments */
-@media (max-width: 480px) {
-  .cake-card {
-    padding: 1.5rem 1.25rem;
-    border-radius: 20px;
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
   }
 }
 </style>
