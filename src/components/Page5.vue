@@ -117,31 +117,31 @@
           <!-- 💨 SMOKE PARTICLES (Appears when extinguished) -->
           <g v-if="showSmoke" class="smoke-group">
             <!-- Smoke Path 1 -->
-            <path
-              class="smoke-particle p1"
-              d="M139.1 82.86 Q135 70 138 55 T136 40"
-              fill="none"
-              stroke="#D3D3D3"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
+
             <!-- Smoke Path 2 -->
-            <path
-              class="smoke-particle p2"
-              d="M139.1 82.86 Q143 72 140 57 T142 42"
-              fill="none"
-              stroke="#E8E8E8"
-              stroke-width="2.5"
-              stroke-linecap="round"
+            <ellipse
+              cx="139"
+              cy="83"
+              rx="10"
+              ry="10"
+              class="smoke-particle p1"
+              style="fill: #66666699"
             />
-            <!-- Smoke Path 3 -->
-            <path
+            <ellipse
+              cx="142"
+              cy="83"
+              rx="14"
+              ry="14"
+              class="smoke-particle p2"
+              style="fill: #66666669"
+            />
+            <ellipse
+              cx="137"
+              cy="83"
+              rx="7"
+              ry="7"
               class="smoke-particle p3"
-              d="M139.1 82.86 Q137 68 141 53 T139 38"
-              fill="none"
-              stroke="#BEBEBE"
-              stroke-width="2"
-              stroke-linecap="round"
+              style="fill: #66666699"
             />
           </g>
 
