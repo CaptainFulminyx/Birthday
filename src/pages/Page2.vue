@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, watch, nextTick } from "vue";
 import { animate, stagger, utils } from "animejs";
-import Hearts from "../components/Hearts.vue";
+import Hearts from "$/Hearts.vue";
 
 const imgs = ref([
   { src: "https://picsum.photos/200/200?random=1", rot: -7 },
@@ -150,6 +150,19 @@ onMounted(() => {
       ▶ Tap to play
     </button>
 
+    <div class="confetti" ref="confettiRef" aria-hidden="true">
+      <span
+        class="confetto"
+        v-for="n in 10"
+        :key="n"
+        :style="{
+          left: ((n * 9.5) % 100) + '%',
+          top: ((n * 13) % 90) + '%',
+          background:
+            n % 3 === 0 ? '#f7c948' : n % 3 === 1 ? '#ff8fb1' : '#ffb4c6',
+        }"
+      ></span>
+    </div>
 
     <h1 class="title">
       <span class="title-cake">🎂</span> Happy Birthday
@@ -195,7 +208,20 @@ onMounted(() => {
   font-family: "Poppins", "Segoe UI", sans-serif;
 }
 
-
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.confetto {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(0.2px);
+}
 
 .title {
   position: relative;
@@ -266,11 +292,12 @@ onMounted(() => {
   font-size: 2.1rem;
   font-weight: 700;
   line-height: 1.2;
+  color: #c23a63; /* Added solid color fallback */
   background: linear-gradient(90deg, #ff5f8f, #ffb648, #ff5f8f);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent; /* Added for better cross-browser support */
   animation: shimmer 3.5s linear infinite;
 }
 

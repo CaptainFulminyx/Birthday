@@ -67,4 +67,18 @@ onUnmounted(() => {
 .heart {
   color: #e8477a;
 }
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.confetto {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(0.2px);
+}
 </style>
