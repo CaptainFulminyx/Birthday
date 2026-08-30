@@ -25,11 +25,7 @@ const showWelcome = ref(true);
         delay: 0.15,
       }"
     >
-      <Page1 />
       <Page2 />
-      <Page3 />
-      <Page4 />
-      <Page5 />
     </motion.div>
   </div>
 </template>

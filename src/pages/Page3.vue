@@ -1,5 +1,10 @@
+<script setup>
+import Hearts from "$/Hearts.vue";
+</script>
+
 <template>
   <div class="page">
+    <Hearts />
     <div class="pic">
       <img src="../assets/ghostwithcake.jpg" />
     </div>
