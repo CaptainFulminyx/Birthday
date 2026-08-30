@@ -1,5 +1,7 @@
 <script setup>
+import { onMounted, onUnmounted } from "vue";
 import { Icon } from "@iconify/vue";
+import { animate, utils } from "animejs";
 
 const setCoords = (i, n) => {
   let w = window.innerWidth;
@@ -16,8 +18,33 @@ const icons = Array.from({ length: 4 }, (_, i) => ({
   y: setCoords(i, 4)[1],
   r: setCoords(i, 4)[2],
 }));
-</script>
 
+let animations = [];
+
+function floatAround(el, radius = 30) {
+  const step = () => {
+    const anim = animate(el, {
+      translateX: utils.random(-radius, radius),
+      translateY: utils.random(-radius, radius),
+      duration: utils.random(5000, 5000),
+      ease: "inOutSine",
+      onComplete: step,
+    });
+    animations.push(anim);
+  };
+  step();
+}
+
+onMounted(() => {
+  document.querySelectorAll(".hearts .icon").forEach((el) => {
+    floatAround(el);
+  });
+});
+
+onUnmounted(() => {
+  animations.forEach((a) => a.revert());
+});
+</script>
 <template>
   <div class="page">
     <h1 class="heading">
@@ -57,7 +84,7 @@ const icons = Array.from({ length: 4 }, (_, i) => ({
         v-for="(icon, index) in icons"
         :key="index"
         icon="line-md:heart-filled"
-        class="h-50 w-50 text-pink-deep absolute"
+        class="icon h-50 w-50 text-pink-deep absolute"
         :style="{
           position: 'absolute',
           opacity: '0.3',

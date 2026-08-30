@@ -1,12 +1,12 @@
 <script setup>
 import { ref } from "vue";
 import { motion } from "motion-v";
-import Welcome from "./components/Welcome.vue";
-import Page1 from "./components/Page1.vue";
-import Page2 from "./components/Page2.vue";
-import Page3 from "./components/Page3.vue";
-import Page4 from "./components/Page4.vue";
-import Page5 from "./components/Page5.vue";
+import Welcome from "#/Welcome.vue";
+import Page1 from "#/Page1.vue";
+import Page2 from "#/Page2.vue";
+import Page3 from "#/Page3.vue";
+import Page4 from "#/Page4.vue";
+import Page5 from "#/Page5.vue";
 
 const showWelcome = ref(true);
 </script>
