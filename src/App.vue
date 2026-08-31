@@ -58,7 +58,7 @@ onMounted(() => {
         delay: 0.15,
       }"
     >
-      <Page2 />
+      <Page5 />
     </motion.div>
   </div>
 </template>
