@@ -8,7 +8,7 @@ import Page3 from "#/Page3.vue";
 import Page4 from "#/Page4.vue";
 import Page5 from "#/Page5.vue";
 
-const showWelcome = ref(true);
+const showWelcome = ref(!true);
 const audioRef = ref(null);
 const needsInteraction = ref(false);
 
@@ -58,7 +58,7 @@ onMounted(() => {
         delay: 0.15,
       }"
     >
-      <Page5 />
+      <Page1 />
     </motion.div>
   </div>
 </template>
